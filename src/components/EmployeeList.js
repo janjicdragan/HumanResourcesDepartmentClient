@@ -3,14 +3,9 @@ import Employee from "./Employee";
 import { AppContext } from "./Context";
 
 function EmployeeList() {
-  const {
-    token,
-    employees,
-    setEmployees,
-    isLoading,
-    setIsDeleted,
-    isDeleted,
-  } = useContext(AppContext);
+  const { token, employees, isLoading, setIsDeleted, isDeleted } = useContext(
+    AppContext
+  );
 
   const handleDelete = async (id) => {
     const deleteRequest = {
