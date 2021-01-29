@@ -28,7 +28,7 @@ const AppProvider = ({ children }) => {
           "Content-Type": "application/json",
           Authorization: "Bearer " + token.access_token,
         },
-        body: filter.stringify(),
+        body: JSON.stringify(filter),
       };
     }
 

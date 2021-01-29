@@ -8,6 +8,13 @@ function FilterForm() {
 
   const handleFilter = (e) => {
     e.preventDefault();
+    setFilter({ minSalary: minSalary, maxSalary: maxSalary });
+  };
+
+  const handleCancel = () => {
+    setMinSalary("");
+    setMaxSalary("");
+    setFilter(null);
   };
 
   return (
@@ -51,7 +58,7 @@ function FilterForm() {
                 <button
                   type="button"
                   className="btn btn-outline-danger filterBtn"
-                  onClick={() => setFilter(null)}
+                  onClick={() => handleCancel()}
                 >
                   Cancel filter
                 </button>

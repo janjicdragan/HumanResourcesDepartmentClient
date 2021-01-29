@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+body {
+  background-image: url("./HRBG.jpg");
+}
+
 table {
   margin-top: 5%;
   margin-bottom: 5%;
@@ -54,4 +58,8 @@ form input {
   border-radius: 4px;
   width: 50%;
   color: white;
+}
+
+tbody {
+  background: rgba(255, 255, 255, 0.9);
 }
