@@ -3,7 +3,14 @@ import Employee from "./Employee";
 import { AppContext } from "./Context";
 
 function EmployeeList() {
-  const { token, employees, setEmployees, isLoading } = useContext(AppContext);
+  const {
+    token,
+    employees,
+    setEmployees,
+    isLoading,
+    setIsDeleted,
+    isDeleted,
+  } = useContext(AppContext);
 
   const handleDelete = async (id) => {
     const deleteRequest = {
@@ -15,8 +22,11 @@ function EmployeeList() {
     };
 
     await fetch("https://localhost:44321/api/employees/" + id, deleteRequest)
-      .then((resp) => resp.json())
-      .then((data) => setEmployees(data))
+      .then((resp) => {
+        if (resp.ok) {
+          setIsDeleted(!isDeleted);
+        }
+      })
       .catch((er) =>
         alert("Error occrured during delete process: " + er.message)
       );

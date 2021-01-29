@@ -7,6 +7,8 @@ const AppProvider = ({ children }) => {
   const [employees, setEmployees] = useState([]);
   const [token, setToken] = useState(null);
   const [filter, setFilter] = useState(null);
+  const [isDeleted, setIsDeleted] = useState(false);
+  const [isAdded, setIsAdded] = useState(false);
 
   const getEmployees = async () => {
     let request = {};
@@ -56,7 +58,7 @@ const AppProvider = ({ children }) => {
 
   const saveToken = (userToken) => {
     sessionStorage.setItem("token", JSON.stringify(userToken));
-    setToken(userToken.token);
+    setToken(userToken);
   };
 
   const deleteToken = () => {
@@ -69,11 +71,11 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     getToken();
-  }, [employees]);
+  }, []);
 
   useEffect(() => {
     getEmployees();
-  }, [filter, token]);
+  }, [filter, token, isDeleted, isAdded]);
 
   return (
     <AppContext.Provider
@@ -85,6 +87,10 @@ const AppProvider = ({ children }) => {
         saveToken,
         deleteToken,
         setFilter,
+        isDeleted,
+        setIsDeleted,
+        isAdded,
+        setIsAdded,
       }}
     >
       {children}

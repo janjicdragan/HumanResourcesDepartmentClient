@@ -8,6 +8,7 @@ import FilterForm from "./components/FilterForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React from "react";
+import AddForm from "./components/AddForm";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <div className="container">
             <FilterForm />
             <EmployeeList />
+            <AddForm />
           </div>
         </Route>
         <Route path="/SignUp">
