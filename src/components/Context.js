@@ -84,6 +84,7 @@ const AppProvider = ({ children }) => {
         token,
         saveToken,
         deleteToken,
+        setFilter,
       }}
     >
       {children}

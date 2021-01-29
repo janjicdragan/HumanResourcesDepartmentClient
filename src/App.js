@@ -16,6 +16,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <div className="container">
+            <FilterForm />
             <EmployeeList />
           </div>
         </Route>
