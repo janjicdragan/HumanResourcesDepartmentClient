@@ -18,3 +18,4 @@ Follow these steps to get your development environment set up:
 1. Run `npm install` command to dowload all dependencies
 1. Navigate to the following link to download server side of application: [Server](https://github.com/janjicdragan/HumanResourcesDepartmentApp). Start the server side project by following guidelines on the given link.
 1. Get back to the console/terminal and run `npm start` afterwards. It will run the application in development mode. You can navigate to [http://localhost:3000] to view it in browser, but it should automatically open.
+1. To sign-up, your password has to contain at least 6 characters. It also must contain at least 1 uppercase letter, 1 lowercase letter, 1 digit and 1 special character.
